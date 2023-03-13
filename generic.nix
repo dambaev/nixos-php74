@@ -79,7 +79,7 @@ let
           filteredArgs = builtins.removeAttrs allArgs [ "extensions" "extraConfig" ];
           php = generic filteredArgs;
 
-          php-packages = (callPackage ../../../top-level/php-packages.nix {
+          php-packages = (callPackage ./php-packages.nix {
             phpPackage = phpWithExtensions;
           }).overrideScope' packageOverrides;
 
