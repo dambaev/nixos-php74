@@ -3,5 +3,5 @@ let
   pkgs = self // { openssl = openssl; };
 in
 {
-  php74 = pkgs.callPackage ./7.4.nix { pkgs = pkgs; };
+  php74 = pkgs.callPackage ./7.4.nix { openssl = openssl; };
 }
