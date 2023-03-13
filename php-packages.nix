@@ -32,7 +32,7 @@
 , net-snmp
 , oniguruma
 , openldap
-, openssl
+, openssl_1_1
 , pam
 , pcre2
 , postgresql
@@ -46,6 +46,9 @@
 , zlib
 }:
 
+let
+  openssl = openssl_1_1;
+in
 lib.makeScope pkgs.newScope (self: with self; {
   buildPecl = import ../build-support/build-pecl.nix {
     php = php.unwrapped;

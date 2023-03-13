@@ -1,7 +1,4 @@
-openssl: self: super:
-let
-  pkgs = self // { openssl = openssl; };
-in
+self: super:
 {
-  php74 = pkgs.callPackage ./7.4.nix { };
+  php74 = self.callPackage ./7.4.nix { };
 }
